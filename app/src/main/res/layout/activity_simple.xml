@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Button
+        android:id="@+id/simple_player"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="简单直接播放"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/simple_list_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="简单列表播放"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/simple_player" />
+
+    <Button
+        android:id="@+id/simple_list_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="简单列表小窗播放"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/simple_list_1" />
+
+    <Button
+        android:id="@+id/simple_detail_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="简单详情播放1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/simple_list_2"/>
+
+    <Button
+        android:id="@+id/simple_detail_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="简单详情播放2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/simple_detail_1" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <Button
+        android:id="@+id/list_bt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="列表自动播放"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/list_bt2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="列表多任务播放"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/list_bt1" />
+
+    <Button
+        android:id="@+id/list_bt3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="列表带广告播放"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/list_bt2" />
+
+</android.support.constraint.ConstraintLayout>

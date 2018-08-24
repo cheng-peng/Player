@@ -1,0 +1,73 @@
+apply plugin: 'com.android.application'
+
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+android {
+    compileSdkVersion build_versions.max_sdk
+    defaultConfig {
+        applicationId "com.cxp.player"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode build_versions.version_code
+        versionName build_versions.version_name
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            //设置支持的SO库架构
+            abiFilters 'armeabi', 'armeabi-v7a', 'x86'
+        }
+    }
+
+    signingConfigs {
+        config {
+            storeFile file(keystoreProperties['KEYSTORE_FILE'])
+            storePassword keystoreProperties['KEYSTORE_PASSWORD']
+            keyAlias keystoreProperties['KEY_ALIAS']
+            keyPassword keystoreProperties['KEY_PASSWORD']
+        }
+    }
+
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.config
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.config
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation deps.junit
+
+    //google
+    implementation deps.support.appcompat
+    implementation deps.support.recyclerview
+    implementation deps.support.constraint_layout
+    implementation deps.support.v4
+
+    //player
+    implementation deps.gsyplayer.gsyVideoPlayer_java
+    implementation deps.gsyplayer.gsyVideoPlayer_ex_so
+
+    //butterknife
+    implementation deps.butterknife.butterknife
+    annotationProcessor deps.butterknife.butterknife_compiler
+
+    //glide
+    implementation deps.glide.glide
+    annotationProcessor deps.glide.compiler
+
+    //danmaku
+    implementation deps.danmaku.DanmakuFlameMaster
+    implementation deps.danmaku.ndkbitmap_armv7a
+    implementation deps.danmaku.ndkbitmap_armv5
+    implementation deps.danmaku.ndkbitmap_x86
+
+}

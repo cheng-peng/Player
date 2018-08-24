@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.cxp.player.video.SampleCoverVideo
+        android:id="@+id/item_ad_video"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <com.cxp.player.video.RequestListADVideoPlayer
+        android:id="@+id/item_ad_ad_video"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:visibility="gone" />
+
+</android.support.constraint.ConstraintLayout>

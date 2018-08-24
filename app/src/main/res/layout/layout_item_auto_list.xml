@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.cxp.player.video.SampleCoverVideo
+        android:id="@+id/item_auto_list_video"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+</android.support.constraint.ConstraintLayout>
